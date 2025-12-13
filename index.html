@@ -1,0 +1,75 @@
+<!DOCTYPE html><!-- уточнение формата для браузера -->
+<html lang="ru"><!-- Основной тег HTML и указание на язык страницы -->
+<head><!-- Для технической информации -->
+    <meta charset="UTF-8"> <!-- Коддировка -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- масштабирование для мобильных сутройств -->
+    <title>Кликер капибара</title><!-- Название вкладки сайта -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+        <div class="container">
+            <div class="row">
+                <!-- Покупка бонуса -->
+                <button id="multi" class="multi">
+                    <!-- заменить текст при покупке -->
+                    <span class="multiCount">x2</span>
+                    <br>
+                    <small>Стоимость: 
+                    <!-- Меняться стоимость -->
+                    <span class="multiCost">100</span>
+                    </small>
+                </button>
+                <button id="auto" class="multi">
+                    <span class="autoCount">1 в сек.</span>
+                    <br>
+                    <small>Стоимость: 
+                    <span class="autoCost">200</span>
+                    </small>
+                </button>
+                <button id="shopOpen" class="multi">
+                    Магазин
+                </button>
+            </div>           
+            <div id="scores">0</div>
+            <div id="pers"></div>
+        </div>
+        
+        <div id="shop">
+            <div class="bg"></div>
+            <div class="shop-body">
+                <div class="shop-header">
+                    <h2>Магазин</h2>
+                    <button id="close">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M27.1017 29.8233L14.9117 17.6142L2.72167 29.8233L0 27.1017L12.2092 14.9117L0 2.72167L2.72167 0L14.9117 12.2092L27.1017 0.0191671L29.8042 2.72167L17.6142 14.9117L29.8042 27.1017L27.1017 29.8233Z" fill="black"/>
+                        </svg>
+                    </button>
+                </div>
+                <div class="shop-items">
+                    <div id="standart" class="skin active">
+                        <img src="pers.png" alt="">
+                        <span>✔️</span>
+                    </div>
+                    <div id="pirat" class="skin">
+                        <img src="./skins/pirat.png" alt="">
+                        <span>1000</span>
+                    </div>
+                    <div id="rocket" class="skin">
+                        <img src="./skins/rocket.png" alt="">
+                        <span>2000</span>
+                    </div>
+                    <div id="sir" class="skin">
+                        <img src="./skins/sir.png" alt="">
+                        <span>3000</span>
+                    </div>
+                </div> 
+            </div>
+        </div>
+
+    <!-- Подключение скриптов -->
+    <script src="bonuses.js"></script>
+    <script src="shop.js"></script>
+</body>
+</html>
