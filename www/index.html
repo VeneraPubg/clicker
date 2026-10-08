@@ -83,6 +83,31 @@
 
     <!-- Подключение скриптов -->
     <script src="bonuses.js"></script>
-    <script src="shop.js"></script>
+    <script type="module" src="./main.js"></script>
+    <script type="module">
+  import { Preferences } from '@capacitor/preferences';
+  import { Haptics, ImpactStyle, NotificationType } from '@capacitor/haptics';
+  import { SplashScreen } from '@capacitor/splash-screen';
+  import { StatusBar, Style } from '@capacitor/status-bar';
+
+  // инициализация
+  window.addEventListener('load', async () => {
+    // Сплэш
+    setTimeout(() => SplashScreen.hide(), 500);
+
+    // Статус-бар (тёмный текст на светлом)
+    await StatusBar.setStyle({ style: Style.Dark });
+
+    // Загрузка прогресса
+    const { value } = await Preferences.get({ key: 'capibara_score' });
+    if (value) {
+      // восстановите свой score
+    }
+  });
+
+  // Экспортируйте функции в глобал, если код игры обычный (не модульный)
+  window.CapHaptics = { Haptics, ImpactStyle, NotificationType };
+  window.CapPrefs = Preferences;
+</script>
   </body>
 </html>

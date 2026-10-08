@@ -1,0 +1,15 @@
+{
+  "name": "karmanniy-talisman",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "sync": "npm run build && npx cap sync"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0"
+  },
+  "dependencies": {
+    "@capacitor/preferences": "^6.0.0"
+  }
+}
